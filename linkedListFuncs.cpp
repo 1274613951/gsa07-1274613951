@@ -110,7 +110,26 @@ Node* recursiveRemoveKFromFront(Node *head, int k) {
  * Return &head of the linked list 5 -> 7 -> 9 -> 12
  */
 Node* recursiveElementwiseSum(Node *head1, Node *head2) {
-    return NULL;
+    int val1;
+    int val2;
+    if(head1 == nullptr && head2 == nullptr){
+        return nullptr;
+    }
+    if(head1 != nullptr){
+         val1 = head1->data;
+    }
+    else{
+        val1 = 0;
+    }
+    if(head2 != nullptr){
+        val2 = head2->data;
+    }else{
+        val2 = 0;
+    }
+    Node *a = new Node(val1 + val2);
+    a->data = sum;
+    a->next = recursiveElementwiseSum(head1->next, head2->next);
+    return a;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
 
