@@ -127,7 +127,6 @@ Node* recursiveElementwiseSum(Node *head1, Node *head2) {
         val2 = 0;
     }
     head1->next = recursiveElementwiseSum(head1->next, head2->next);
-    delete head2;
     return head1;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
