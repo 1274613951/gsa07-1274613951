@@ -13,7 +13,7 @@ using namespace std;
 bool isPalindrome(const string s1){
     int j = s1.length();
     for(int i = 0; i < j/2; i++){
-            if(tolower.s1[i]!=tolower.s1[j-1-i]){
+            if(tolower(s1[i])!=tolower(s1[j-1-i])){
                 return false;
             }
         }
