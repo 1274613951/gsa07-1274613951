@@ -148,7 +148,7 @@ Node* recursiveSplice(Node *head1, Node *head2) {
     if(head2 == nullptr){
         return head1;
     }
-    Node *curr = recursiveSplice(head1, head2);
+    Node *curr = recursiveSplice(head1->next, head2->next);
     head2 -> next = curr;
     head1 -> next = head2;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
