@@ -1,1 +1,24 @@
 *.o
+*~
+.DS_Store
+
+# Specific executables
+deleteKthNodeTest
+ deleteKthNodeTest.o
+elementwiseSumTest
+ - elementwiseSumTest.o
+ - findKthNodeTest
+ - findKthNodeTest.o
+ - largestValueTest
+ - largestValueTest.o
+ - linkedListFuncs.o
+ - removeKFromFrontTest
+removeKFromFrontTest.o
+spliceTest
+ spliceTest.o
+strFuncs.o
+ strTest
+strTest.o
+sumTest
+sumTest.o
+tddFuncs.o
