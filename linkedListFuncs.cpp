@@ -89,7 +89,15 @@ Node* recursiveDeleteKthNode(Node *head, int k) {
 * Delete n1, n2 and return &n3
 */
 Node* recursiveRemoveKFromFront(Node *head, int k) {
-    return NULL;
+    if(head == nullptr || k <= 0){
+        return head;
+    }
+    if(k > 0){
+        Node *curr = head->next;
+        delete head;
+        return recursiveDeleteKthNode(curr, k-1);;
+    }
+    return head;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
 
