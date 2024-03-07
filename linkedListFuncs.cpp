@@ -12,7 +12,11 @@ using namespace std;
 //return sum of all values in linked list using a recursive approach
 //if head is null return 0
 int recursiveSum(Node* head) {
-  return -42;
+    int sum = 0;
+    if(head == nullptr){
+        return 0 ;
+}
+return head->data + recursiveSum(head->next);
 }
 
 
@@ -20,8 +24,16 @@ int recursiveSum(Node* head) {
 //return the largest value in the linked list using a recursive approach
 //you may assume the list has at least one element
 int recursiveLargestValue(Node* head) {
-
-  return -42;
+    if(head == nullptr){
+        return 0;
+    }
+    int large = recursiveLargestValue(head->next);
+    if(head->data > large){
+        return head->data;
+    }
+    else{
+        return large;
+    }
 }
 
 
@@ -33,7 +45,13 @@ int recursiveLargestValue(Node* head) {
  * Return &n3
  */
 Node* recursiveFindKthNode(Node *head, int k){
-    return NULL;
+    if(head == nullptr || k <= 0){
+        return NULL;
+    }
+    if(k == 1){
+        return head;
+    }
+    recursiveFindKthNode(head->next, k-1);
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
 
@@ -48,7 +66,16 @@ Node* recursiveFindKthNode(Node *head, int k){
 * New list should look like this: n1 -> n3 -> n4
 */
 Node* recursiveDeleteKthNode(Node *head, int k) {
-    return NULL;
+    if(head == nullptr || k == 0){
+        return head;
+    }
+    if(k == 1){
+        Node *curr = head->next;
+        delete head;
+        return curr;
+    }
+    head -> next = recursiveDeleteKthNode(head->next, k-1);
+    return head;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
 
