@@ -95,8 +95,8 @@ Node* recursiveRemoveKFromFront(Node *head, int k) {
     if(k > 0){
         Node *curr = head->next;
         delete head;
+        return recursiveRemoveKFromFront(curr, k-1);
     }
-    recursiveDeleteKthNode(curr, k-1);
     return head;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
