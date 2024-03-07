@@ -11,6 +11,11 @@ using namespace std;
  *
  *You should provide a recursive solution*/
 bool isPalindrome(const string s1){
-    //STUB: Replace the following with the correct code.
+    int j = s1.length();
+    for(int i = 0; i < j/2; i++){
+            if(s1[i]!=s1[j-1-i]){
+                return false;
+            }
+        }
     return true;
 }
