@@ -142,6 +142,14 @@ Node* recursiveElementwiseSum(Node *head1, Node *head2) {
  * Return &head of 1 -> 4 -> 2 -> 5 -> 3 -> 6
  */
 Node* recursiveSplice(Node *head1, Node *head2) {
-    return NULL;
+    if(head1 == nullptr){
+        return head2;
+    }
+    if(head2 == nullptr){
+        return head1;
+    }
+    Node *curr = recursiveSplice(head1, head2);
+    head2 -> next = curr;
+    head1 -> next = head2;
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
