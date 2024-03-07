@@ -111,17 +111,17 @@ Node* recursiveRemoveKFromFront(Node *head, int k) {
  */
 Node* recursiveElementwiseSum(Node *head1, Node *head2) {
     if(head1 && head2){
-        Node *h3 = new Node(head1->data + head2->data, nullptr);
+        Node *h3 = new Node({head1->data + head2->data, nullptr});
         h3 -> next = recursiveElementwiseSum(head1->next, head2->next);
         return h3;
     }
     else if(head1 && !head2){
-        Node *h3 = new Node(head1->data, nullptr);
+        Node *h3 = new Node({head1->data, nullptr});
         h3 -> next = recursiveElementwiseSum(head1->next, head2);
         return h3;
     }
     else if (!head1 && head2){
-        Node *h3 = new Node(head2->data, nullptr);
+        Node *h3 = new Node({head2->data, nullptr});
         h3->next = recursiveElementwiseSum(head1, head2->next);
         return h3;
     }
